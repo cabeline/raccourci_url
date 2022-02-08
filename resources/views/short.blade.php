@@ -11,18 +11,24 @@
     </head>
     <body>
     <div class="container mt-5">
-        <form action="{{url('/')}}" method="post">
-            {{ csrf_field() }}
             <div class="row mb-5">
                 <div class="col col-md-5">
-                    <label for="url">Url</label>
-                    <input type="text" required class="form-control" name="url" id="url" placeholder="Entrer votre url ici">
+                    <label for="url">Initial Url</label>
+                    <input type="text" readonly class="form-control" id="init_url" value="{{$initUrl}}">
+                </div>
+            </div>
+        
+            <div class="row mb-5">
+                <div class="col col-md-5">
+                    <label for="url">Short Url</label>
+                    <input type="text" readonly class="form-control" id="short_url" value="{{$shortURL}}">
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col col-md-5"><button id="submit" class="btn btn-success" type="submit">Valider</button></div>
+                <div class="col col-md-5">
+                    <a href="{{url('/')}}" class="btn btn-danger">Back</a>
+                </div>
             </div>
-        </form>
     </div>
     
     </body>
